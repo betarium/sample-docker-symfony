@@ -19,7 +19,7 @@ RUN yes | pecl install xdebug \
     && echo "xdebug.mode = debug" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.start_with_request = yes" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.client_port = 9003" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.log = /var/log/xdebug.log" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.log = /tmp/xdebug.log" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && rm -rf /tmp/pear
 
 # Install composer
