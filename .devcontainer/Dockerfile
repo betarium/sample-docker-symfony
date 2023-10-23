@@ -20,6 +20,7 @@ RUN yes | pecl install xdebug \
     && echo "xdebug.start_with_request = yes" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.client_port = 9003" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.log = /tmp/xdebug.log" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.log_level = 0" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && rm -rf /tmp/pear
 
 # Install composer
@@ -41,6 +42,11 @@ COPY 000-default.conf /etc/apache2/sites-available/
 #startup config
 COPY docker-entry.sh /usr/bin/
 RUN chmod +x /usr/bin/docker-entry.sh
+
+COPY init-symfony.sh /usr/bin/
+RUN chmod +x /usr/bin/init-symfony.sh
+
+RUN git config --global --add safe.directory /workspace
 
 WORKDIR /workspace
 

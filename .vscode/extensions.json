@@ -4,6 +4,7 @@
         "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-azuretools.vscode-docker",
         "xdebug.php-debug",
-        "xdebug.php-pack"
+        "xdebug.php-pack",
+        "bmewburn.vscode-intelephense-client"
     ]
 }
